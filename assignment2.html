@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking Site</title>
+    <style>
+        /* Reset default page margin so navbar sits at the very top */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        /* Top navbar */
+        .navbar {
+            height: 60px;
+            background: #2b2f3a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 16px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        /* small logo text (14px) */
+        .logo {
+            height: 14px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        /* heading inside navbar */
+        .nav-heading {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* content area sits below fixed navbar and centers the card */
+        .content {
+            padding: 80px 16px 16px;
+            /* top padding > navbar height */
+            box-sizing: border-box;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            justify-content: center;
+            /* center horizontally */
+            align-items: flex-start;
+            /* start near top; change to center to center vertically */
+        }
+
+        /* Card wrapper */
+        .card {
+            width: 100%;
+            max-width: 920px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        /* marquee styling placed above form */
+        .marquee {
+            overflow: hidden;
+            background: #e9f3ff;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid rgba(43,47,58,0.06);
+        }
+
+        .marquee .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            color: #1f2a44;
+            font-weight: 600;
+            animation: marquee 12s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* new inner layout: form left, image right */
+        .card-inner {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .card form {
+            flex: 1;
+        }
+
+        .panel-image {
+            width: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panel-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        /* optional small form styling for readability */
+        form>div {
+            margin-bottom: 12px;
+        }
+
+        label {
+            margin-right: 8px;
+            display: inline-block;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .radio-group,
+        .inline-inputs {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #2b2f3a;
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        /* responsive: stack on small screens */
+        @media (max-width: 760px) {
+            .card-inner {
+                flex-direction: column;
+            }
+
+            .panel-image {
+                width: 100%;
+            }
+
+            .marquee .marquee-text {
+                animation-duration: 8s;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="logo.png" alt="" class="logo"></div>
+        <h1 class="nav-heading">Book Seat</h1>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <!-- Marquee placed above the form -->
+            <div class="marquee">
+                <div class="marquee-text">Welcome to BUS booking site.</div>
+            </div>
+
+            <div class="card-inner">
+                <form>
+                    <div>
+                        <label for="username">User Name</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                    <div>
+                        <label>User Gender</label>
+                        <div class="radio-group">
+                            <div><input name="gender" id="male" value="male" type="radio"><label for="male">Male</label>
+                            </div>
+                            <div><input name="gender" id="female" value="female" type="radio"><label
+                                    for="female">Female</label></div>
+                            <div><input name="gender" id="other" value="other" type="radio"><label
+                                    for="other">Others</label></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <select name="city" id="city">
+                            <option value="select" selected>Select City</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Seat Type</label>
+                        <div class="radio-group">
+                            <div><input name="seat_type" id="ac" value="ac" type="radio"><label for="ac">AC</label></div>
+                            <div><input name="seat_type" id="nonac" value="noac" type="radio"><label for="nonac">Non
+                                    AC</label></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="payment_method">Select Payment Method</label>
+                        <div class="radio-group" id="payment_method">
+                            <div><input type="radio" name="payment_method" id="upi" value="upi"><label for="upi">UPI</label>
+                            </div>
+                            <div><input type="radio" name="payment_method" id="card" value="card"><label
+                                    for="card">Card</label></div>
+                            <div><input type="radio" name="payment_method" id="netbanking" value="netbanking"><label
+                                    for="netbanking">Net Banking</label></div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button">Book Bus</button>
+                    </div>
+                </form>
+
+                <!-- image placed to the right of the form -->
+                <div class="panel-image">
+                    <img src="image.png" alt="Bus image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

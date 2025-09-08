@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar wrapper */
+.navbar {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+/* Logo */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+/* Search bar */
+
+.search-container {
+    width: 500px;
+    margin: 0 20px;
+    display: flex;
+}
+
+.search-container input {
+    width: 100%;
+    min-width: 0;
+    padding: 8px;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    outline: none;
+}
+
+.search-container button {
+    /* background: #ffe11b; */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 2px 0 0 2px;
+    cursor: pointer;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+
+/* Right side links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.nav-links a {
+    color: rgb(74, 74, 74);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: 0.3s;
+}
+
+.nav-links a svg {
+    fill: rgb(74, 74, 74) !important;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Category strip */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+    text-align: center;
+    font-size: 14px;
+    color: #212121;
+    cursor: pointer;
+}
+
+.category img {
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.category:hover {
+    color: #2874f0;
+    font-weight: bold;
+}
+
+/* Icon for more */
+.dots {
+    font-size: 18px;
+    line-height: 0;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>TODO LIST</h1>
+    <input type="text" name="todoInput" id="todoInput">
+    <button onclick="handleTodo()">Add todo</button>
+    <div id="todoArea">
+
+    </div>
+
+    <script>
+        const handleTodo = () => {
+            const input = document.getElementById('todoInput');
+            const todoArea = document.getElementById('todoArea');
+            if(input.value === "") {
+                alert("Please enter a valid todo");
+                return;
+            }
+            const id = Date.now();
+            const currTodo = `<div class="todoCard" id="${id}">
+                <input type="checkbox" name="" id="${id}">
+                    <p>${input.value}</p>
+                    <button id= ${id}>Delete todo</button>
+            </div>`
+
+            todoArea.insertAdjacentHTML('beforeend', currTodo);
+            input.value = "";
+        }
+        todoArea.addEventListener('click', (e) => {
+            const target = e.target;
+            if(target.tagName === 'BUTTON') {
+                const id = target.id;
+                const todoCard = document.getElementById(id);
+                todoArea.removeChild(todoCard);
+            }
+        })
+
+        todoArea.addEventListener('change', (e) => {
+            const target = e.target;
+            if(target.tagName === 'INPUT' && target.type === 'checkbox') {
+                const id = target.id;
+                const todoCard = document.getElementById(id);
+                const para = todoCard.querySelector('p');
+                if(target.checked) {
+                    para.style.textDecoration = "line-through";
+                } else {
+                    para.style.textDecoration = "none";
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

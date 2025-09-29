@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="c"></p>
+    <script>
+
+        const toy = {
+            toy1: "car",
+            toy2: "doll",
+            toy3: "ball"
+        }
+        document.querySelector(".c").innerHTML = toy.toy1;
+
+        class Car {
+            constructor(brand, model, year) {
+                this.brand = brand;
+                this.model = model;
+                this.year = year;
+            }
+            displayInfo() {
+                return `Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}`;
+            }
+        }
+        const myCar = new Car("Toyota", "Corolla", 2020);
+        const myCar2 = new Car("Honda", "Civic", 2019);
+        document.querySelector(".c").innerHTML += "<br>" + myCar.displayInfo();
+        document.querySelector(".c").innerHTML += "<br>" + myCar2.displayInfo();
+    </script>
+</body>
+</html>

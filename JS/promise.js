@@ -16,5 +16,5 @@ mypromise
   });
 
 mypromise.catch(
-    
+    //
 )

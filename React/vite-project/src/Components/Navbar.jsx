@@ -1,12 +1,12 @@
 import React from "react";
 import "./navbar.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className="navbar">
       <div className="navbar-content">
         <div className="navbar-logo">
-          <h1>NETFLIX</h1>
+          <h1>{props.home}</h1>
         </div>
         <div className="navbar-links">
           <a href="https://dictionary.cambridge.org/dictionary/english/home">

@@ -5,7 +5,7 @@ import Navbar from "./Components/Navbar"
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar home="ABES Engineering College" />
       <Card name="Card 1" />
       <br />
       <Card name="Card 2" />

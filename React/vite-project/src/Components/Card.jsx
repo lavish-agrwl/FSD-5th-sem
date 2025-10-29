@@ -3,15 +3,17 @@ import "./card.css"
 
 function Card() {
   return (
-    <div id="adi">
+    <div>
       <center>
-        <img
-          src="https://animalfactguide.com/wp-content/uploads/2025/03/panda-climbing.jpg"
-          alt=""
-          height={300}
-          width={300}
-        />
-        <h1>Lavish</h1>
+        <div id="adi">
+          <img
+            src="https://animalfactguide.com/wp-content/uploads/2025/03/panda-climbing.jpg"
+            alt=""
+            height={300}
+            width={300}
+          />
+          <h1>Lavish</h1>
+        </div>
       </center>
     </div>
   );

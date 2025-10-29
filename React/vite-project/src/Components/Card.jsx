@@ -1,7 +1,7 @@
 import React from 'react'
 import "./card.css"
 
-function Card() {
+function Card(props) {
   return (
     <div>
       <center>
@@ -12,7 +12,7 @@ function Card() {
             height={300}
             width={300}
           />
-          <h1>Lavish</h1>
+          <h1>{[props.name]}</h1>
         </div>
       </center>
     </div>

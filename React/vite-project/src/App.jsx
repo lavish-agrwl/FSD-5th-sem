@@ -1,17 +1,10 @@
 import React from 'react'
-import Card from "./Components/Card"
-import Navbar from "./Components/Navbar"
+import Link1 from './Components/Link1'
 
 function App() {
   return (
     <div>
-      <Navbar home="ABES Engineering College" />
-      <Card name="Card 1" />
-      <br />
-      <Card name="Card 2" />
-      <br />
-      <Card name="Card 3" />
-
+      <Link1 />
     </div>
   )
 }

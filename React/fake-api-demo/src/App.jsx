@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import Fashion from './Components/Fashion'
 
 function App() {
   const [data, setData] = useState([])
@@ -10,7 +11,14 @@ function App() {
   }, [])
   return (
     <div>
-
+      {data.map(item => (
+        Fashion({
+          key: item.id,
+          image: item.image,
+          name: item.title,
+          price: item.price
+        })
+      ))}
     </div>
   )
 }

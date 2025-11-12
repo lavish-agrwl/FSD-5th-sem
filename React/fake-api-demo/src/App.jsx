@@ -5,6 +5,8 @@ function App() {
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(json => setData(json))
   }, [])
   return (
     <div>

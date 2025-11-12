@@ -3,7 +3,7 @@ import "./fashion.css";
 
 function Fashion(props) {
   return (
-    <div>
+    <div  className="fashion">
       <div className="card">
         <img src={props.image} alt="" height={100} width={100} />
         <h3>{props.title}</h3>

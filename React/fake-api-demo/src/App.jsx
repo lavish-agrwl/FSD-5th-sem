@@ -11,16 +11,14 @@ function App() {
   }, [])
   return (
     <div>
-      {data.map(item => (
+      <h1>Fashion Show</h1>
+      {data.map((item) =>
         Fashion({
-          key: item.id,
-          image: item.image,
-          name: item.title,
-          price: item.price
+          data
         })
-      ))}
+      )}
     </div>
-  )
+  );
 }
 
 export default App

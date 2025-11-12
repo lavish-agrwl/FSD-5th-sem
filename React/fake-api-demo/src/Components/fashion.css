@@ -1,9 +1,14 @@
 .card {
-    height: 300px;
+    height: auto;
     width: 200px;
     box-shadow: 2px 2px 12px grey;
     text-align: center;
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    color: grey;
 }

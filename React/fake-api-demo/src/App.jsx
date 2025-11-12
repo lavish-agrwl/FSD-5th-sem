@@ -13,9 +13,7 @@ function App() {
     <div>
       <h1>Fashion Show</h1>
       {data.map((item) =>
-        Fashion({
-          data
-        })
+        Fashion(item)
       )}
     </div>
   );
